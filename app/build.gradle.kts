@@ -48,5 +48,13 @@ dependencies {
     ksp(libs.hilt.compiler)
     implementation(libs.androidx.hilt.lifecycle.viewmodel.compose)
 
+    // LiteRT-LM: corre un modelo de lenguaje en el teléfono. Trae su motor nativo
+    // (arm64 para teléfonos, x86_64 para el emulador); el modelo NO viene aquí.
+    implementation(libs.litertlm.android)
+
     debugImplementation(libs.androidx.ui.tooling)
+
+    // Pruebas locales (src/test): corren en la JVM de tu computadora, sin emulador ni modelo.
+    testImplementation(libs.junit)
+    testImplementation(libs.kotlinx.coroutines.test)
 }
